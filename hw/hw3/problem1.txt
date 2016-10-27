@@ -1,25 +1,32 @@
 # Snapshot 1 (before process)
 
-bash-3.2$ netstat -an -p tcp
+titania:hw3 rthomas$ netstat -an -p tcp
 Active Internet connections (including servers)
 Proto Recv-Q Send-Q  Local Address          Foreign Address        (state)
-tcp4       0      0  192.168.178.41.61201   216.58.218.142.443     ESTABLISHED
-tcp4       0      0  192.168.178.41.61196   192.30.253.124.443     ESTABLISHED
-tcp4       0      0  192.168.178.41.61188   216.58.218.142.443     ESTABLISHED
+tcp4       0      0  192.168.178.41.65304   192.30.253.125.443     ESTABLISHED
 tcp4       0      0  192.168.178.41.53169   17.249.220.33.5223     ESTABLISHED
 tcp4       0      0  *.22                   *.*                    LISTEN
 tcp6       0      0  *.22                   *.*                    LISTEN
+
 
 # Snapshot 2 (during process)
 
-bash-3.2$ netstat -an -p tcp
+titania:hw3 rthomas$ netstat -an -p tcp
 Active Internet connections (including servers)
 Proto Recv-Q Send-Q  Local Address          Foreign Address        (state)
-tcp4       0      0  192.168.178.41.61201   216.58.218.142.443     ESTABLISHED
-tcp4       0      0  192.168.178.41.61196   192.30.253.124.443     ESTABLISHED
+tcp4       0      0  127.0.0.1.5556         127.0.0.1.52118        ESTABLISHED #local IPs being used for server process
+tcp4       0      0  127.0.0.1.52118        127.0.0.1.5556         ESTABLISHED
+tcp4       0      0  127.0.0.1.5556         127.0.0.1.52100        ESTABLISHED
+tcp4       0      0  127.0.0.1.52100        127.0.0.1.5556         ESTABLISHED
+tcp4       0      0  *.5556                 *.*                    LISTEN      # port being used for server process
+tcp4       0      0  192.168.178.41.50818   216.58.218.110.443     ESTABLISHED
+tcp4       0      0  192.168.178.41.50817   216.58.218.142.443     ESTABLISHED
+tcp4       0      0  192.168.178.41.50754   104.131.18.3.22        ESTABLISHED
+tcp4       0      0  192.168.178.41.65304   192.30.253.125.443     ESTABLISHED
 tcp4       0      0  192.168.178.41.53169   17.249.220.33.5223     ESTABLISHED
 tcp4       0      0  *.22                   *.*                    LISTEN
 tcp6       0      0  *.22                   *.*                    LISTEN
+
 
 # Snapshot 3 (after process)
 
@@ -30,4 +37,3 @@ tcp4       0      0  192.168.178.41.61196   192.30.253.124.443     ESTABLISHED
 tcp4       0      0  192.168.178.41.53169   17.249.220.33.5223     ESTABLISHED
 tcp4       0      0  *.22                   *.*                    LISTEN
 tcp6       0      0  *.22                   *.*                    LISTEN
-  
