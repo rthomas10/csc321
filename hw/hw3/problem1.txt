@@ -1,0 +1,33 @@
+# Snapshot 1 (before process)
+
+bash-3.2$ netstat -an -p tcp
+Active Internet connections (including servers)
+Proto Recv-Q Send-Q  Local Address          Foreign Address        (state)
+tcp4       0      0  192.168.178.41.61201   216.58.218.142.443     ESTABLISHED
+tcp4       0      0  192.168.178.41.61196   192.30.253.124.443     ESTABLISHED
+tcp4       0      0  192.168.178.41.61188   216.58.218.142.443     ESTABLISHED
+tcp4       0      0  192.168.178.41.53169   17.249.220.33.5223     ESTABLISHED
+tcp4       0      0  *.22                   *.*                    LISTEN
+tcp6       0      0  *.22                   *.*                    LISTEN
+
+# Snapshot 2 (during process)
+
+bash-3.2$ netstat -an -p tcp
+Active Internet connections (including servers)
+Proto Recv-Q Send-Q  Local Address          Foreign Address        (state)
+tcp4       0      0  192.168.178.41.61201   216.58.218.142.443     ESTABLISHED
+tcp4       0      0  192.168.178.41.61196   192.30.253.124.443     ESTABLISHED
+tcp4       0      0  192.168.178.41.53169   17.249.220.33.5223     ESTABLISHED
+tcp4       0      0  *.22                   *.*                    LISTEN
+tcp6       0      0  *.22                   *.*                    LISTEN
+
+# Snapshot 3 (after process)
+
+bash-3.2$ netstat -an -p tcp
+Active Internet connections (including servers)
+Proto Recv-Q Send-Q  Local Address          Foreign Address        (state)
+tcp4       0      0  192.168.178.41.61196   192.30.253.124.443     ESTABLISHED
+tcp4       0      0  192.168.178.41.53169   17.249.220.33.5223     ESTABLISHED
+tcp4       0      0  *.22                   *.*                    LISTEN
+tcp6       0      0  *.22                   *.*                    LISTEN
+  
